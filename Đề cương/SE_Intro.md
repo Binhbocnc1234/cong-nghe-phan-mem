@@ -41,8 +41,32 @@
 ## 4. Định nghĩa Kỹ nghệ phần mềm (Software Engineering - SE)
 
 **1. Khái niệm SE**
-- **Lý thuyết:** Kỹ nghệ phần mềm (SE) là việc thiết lập và sử dụng các nguyên lý công nghệ đúng đắn để tạo ra phần mềm một cách kinh tế (tiết kiệm), vừa tin cậy vừa hoạt động hiệu quả trên máy thực. Bốn lớp (layer) của SE bao gồm: Quality (chất lượng làm nền tảng), Process (quy trình), Method (phương pháp thực hiện quy trình), và Tool (công cụ hỗ trợ tự động hóa).
-- **Ví dụ (Game MOBA):** Để đảm bảo game không có bug (Quality), team áp dụng quy trình Scrum (Process), dùng phương pháp lập trình hướng đối tượng (Method), và sử dụng công cụ Unity IDE kết hợp Github (Tool).
+- **Lý thuyết:** Kỹ nghệ phần mềm (SE) là việc thiết lập và sử dụng các nguyên lý công nghệ đúng đắn để tạo ra phần mềm một cách kinh tế (tiết kiệm), vừa tin cậy vừa hoạt động hiệu quả trên máy thực.
+- **Ví dụ (Game MOBA):** Việc phát triển game không chỉ đơn thuần là ngồi viết code theo bản năng, mà là việc áp dụng các nguyên lý thiết kế hệ thống, quản lý tài nguyên mạng và tổ chức nhân sự khoa học để game ra mắt đúng tiến độ, không bị đội chi phí và chạy mượt mà trên thiết bị của người chơi.
+
+**2. Bốn lớp cơ bản của Kỹ nghệ phần mềm (Four Layers of SE)**
+Kỹ nghệ phần mềm là một công nghệ phân tầng (layered technology). Bất kỳ phương pháp tiếp cận kỹ thuật nào cũng phải dựa trên một cam kết về chất lượng của tổ chức. Bốn lớp này xếp chồng lên nhau từ dưới lên trên, tạo thành nền tảng cho việc phát triển phần mềm:
+
+- **1. Lớp Tập trung vào Chất lượng (A "Quality" Focus):**
+  - **Lý thuyết:** Đây là **lớp nền móng (bedrock)** của công nghệ phần mềm. Mọi kỹ thuật, công cụ và quy trình được xây dựng đều phải tựa vào lớp nền tảng này. Nó bao gồm sự cam kết với toàn bộ các hoạt động quản lý chất lượng toàn diện (Total Quality Management - TQM, Six Sigma, v.v.). Trọng tâm của lớp này là việc thúc đẩy **văn hóa cải tiến quy trình liên tục** (continuous process improvement), tạo nên những cách thức phát triển phần mềm hiệu quả và ít lỗi hơn theo thời gian.
+  - **Ví dụ (Game MOBA):** Ban giám đốc đưa ra cam kết chất lượng (QA) cao nhất: "Game không được phép giật lag, ping phải < 50ms, và không được có lỗi nghiêm trọng làm hỏng trải nghiệm đấu giải (eSports)". Nếu một bản cập nhật code mới chạy nhanh hơn nhưng lại phát sinh lỗi văng game, bản cập nhật đó sẽ bị loại bỏ vì vi phạm cam kết về chất lượng nền tảng này.
+
+- **2. Lớp Quy trình (Process):**
+  - **Lý thuyết:** Đây là **chất kết dính (glue)** giữ chặt các lớp của kỹ nghệ phần mềm với nhau. Quy trình cung cấp một **khung làm việc (framework)** thiết lập ra các khu vực quy trình quan trọng (Key Process Areas). Các khu vực này thiết lập bối cảnh để áp dụng các phương pháp kỹ thuật (khi nào thì dùng phương pháp gì), tạo ra các sản phẩm bàn giao (work products/deliverables), thiết lập các mốc thời gian (milestones), thiết lập các chốt kiểm soát chất lượng (quality assurance) và kiểm soát sự thay đổi (change management).
+  - **Ví dụ (Game MOBA):** Đội ngũ phát triển thiết lập quy trình Scrum. Quy trình này quy định rõ: Dự án chia thành nhiều giai đoạn (Sprint), cứ 2 tuần (milestone) thì phải bàn giao 1 tính năng chơi thử được (work product). Nhờ quy trình này, toàn bộ công việc từ thiết kế, code đến test được tổ chức lại một cách có trật tự, thay vì mọi người làm việc tùy hứng.
+
+- **3. Lớp Phương pháp (Method):**
+  - **Lý thuyết:** Phương pháp cung cấp các câu trả lời **"làm thế nào" (how-to)** mang tính kỹ thuật để xây dựng phần mềm (đi vào chi tiết cụ thể hơn lớp Quy trình). Phương pháp bao gồm một mảng rộng các công việc kỹ thuật: giao tiếp (communication), phân tích yêu cầu (requirements analysis), mô hình hóa thiết kế (design modeling), xây dựng chương trình/viết mã nguồn (program construction), kiểm thử (testing) và hỗ trợ (support). Các phương pháp đều dựa trên một tập hợp các nguyên lý căn bản của chuyên ngành.
+  - **Ví dụ (Game MOBA):** Khi thực thi các nhiệm vụ trong quy trình, team Dev áp dụng các phương pháp kỹ thuật cụ thể:
+    - *Để thiết kế:* Dùng phương pháp Thiết kế hướng đối tượng (Object-Oriented Design) để thiết kế các class Tướng, class Trang bị.
+    - *Để tìm lỗi:* Dùng phương pháp kiểm thử Hộp đen (Black-box Testing) kết hợp với kiểm thử hồi quy (Regression Testing) để kiểm tra xem chiêu cuối của tướng mới có hoạt động đúng không và có làm hỏng các tướng cũ không.
+
+- **4. Lớp Công cụ (Tool):**
+  - **Lý thuyết:** Công cụ cung cấp **sự hỗ trợ tự động (automated) hoặc bán tự động (semi-automated)** cho lớp Quy trình và Phương pháp. Khi các công cụ được tích hợp lại với nhau sao cho thông tin tạo ra bởi công cụ này có thể được sử dụng bởi công cụ khác, hệ thống đó được thiết lập thành **CASE** (Computer-Aided Software Engineering - Kỹ nghệ phần mềm có sự trợ giúp của máy tính).
+  - **Ví dụ (Game MOBA):** Thay vì quản lý code và test thủ công, nhóm sử dụng bộ công cụ tích hợp (CASE): 
+    - Lập trình bằng IDE (Unity/Rider).
+    - Quản lý mã nguồn bằng Git (hỗ trợ bán tự động việc ghép code).
+    - Quản lý tiến độ bằng Jira. Khi lập trình viên đẩy code lên Git và có từ khóa "Fix bug 123", hệ thống Jira tự động chuyển trạng thái công việc sang "Done". Đây là sự tự động hóa giúp giảm sai sót và tăng năng suất.
 
 ---
 

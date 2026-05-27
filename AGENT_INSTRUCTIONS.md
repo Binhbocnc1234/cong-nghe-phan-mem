@@ -3,10 +3,10 @@
 Dự án này là thư mục lưu trữ tài liệu học tập môn **Công nghệ phần mềm (Software Engineering)**. Đây không phải dự án code, nên tuyệt nhiên không có viết code và test
 
 ## 1. Cấu trúc thư mục (Directory Structure)
-- `Documentation/plan`: Chứa hướng dẫn để agent tạo tài nguyên
+- `Documentation/plan`: Chứa hướng dẫn để agent tạo tài nguyên. Nếu như bất cứ thao tác nào mà không nằm trong hướng dẫn, hãy hỏi người dùng trước, và cập nhật plan để vá sự thiếu sót
 - `Slides/`: slide môn học. Slide chứa nội dung đã được tinh gọn
-- `Đề cương/`: Đề cương chi tiết môn học. Phạm vi của đề cương cần bám sát slide, còn nội dung thì nên ưu tiên dùng sách, bởi vì slide còn có thể thiếu sót và chưa đủ thông tin. Các ví dụ cần phải làm rõ được lý thuyết bạn viết trong đề cương
-- `Đề thi/`: Các đề thi, bài tập trắc nghiệm/tự luận, ngân hàng câu hỏi.
+- `Đề cương/`: Đề cương chi tiết môn học. Để tạo đề cương, cần tuân theo hướng dẫn của `cách-tạo-đề-cương.md`
+- `Đề thi/`: Các đề thi, bài tập trắc nghiệm/tự luận, ngân hàng câu hỏi. Cần tuân theo hướng dẫn của `How-to-create-exam.md`
 - Các file PDF ở thư mục gốc: Chứa sách giáo trình và tài liệu tham khảo cốt lõi (ví dụ: *Software Engineering A Practitioner's Approach*, hướng dẫn sử dụng *PlantUML*). 
 
 ## 3. Khả năng làm việc
