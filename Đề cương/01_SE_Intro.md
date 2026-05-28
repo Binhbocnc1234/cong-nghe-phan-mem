@@ -20,9 +20,20 @@
 - **Lý thuyết:** Khác với phần cứng bị hỏng hóc vật lý theo thời gian, phần mềm không bao giờ bị "mòn". Tuy nhiên, nó sẽ bị "thoái hóa" do môi trường hệ điều hành thay đổi, nhu cầu người dùng đổi mới, và việc liên tục bảo trì/sửa mã nguồn sinh ra các lỗi mới (side effects).
 - **Ví dụ (Game MOBA):** Game không bị xước xát vật lý, nhưng sau 5 năm nếu không nâng cấp đồ họa sẽ bị tụt hậu (thoái hóa) so với các game mới. Khi Dev thêm một vị tướng mới, code vô tình làm hỏng kỹ năng của các tướng cũ.
 
-**2. Phần mềm được phát triển theo đơn đặt hàng, ít lắp ráp từ mẫu**
-- **Lý thuyết:** Hầu hết phần mềm được xây dựng để đáp ứng yêu cầu riêng biệt của từng khách hàng hoặc tổ chức, do đó nó rất phức tạp, vô hình và mang tính chất cá nhân hóa cao.
-- **Ví dụ (Game MOBA):** Dù trên thị trường có nhiều game, nhưng công ty vẫn phải tự thiết kế bộ kỹ năng, bản đồ và cân bằng tướng riêng biệt để tạo bản sắc, không thể cứ lấy râu ông này cắm cằm bà kia.
+**2. Không được lắp ráp từ mẫu có sẵn**
+- **Lý thuyết:** Phần mềm không có danh mục chi tiết cho trước như linh kiện phần cứng. Mỗi sản phẩm là một sản phẩm đặt hàng theo yêu cầu riêng, được xây dựng từ đầu hoặc tùy biến sâu để đáp ứng nhu cầu cụ thể của khách hàng/tổ chức.
+- **Ví dụ (Game MOBA):** Không tồn tại "danh mục chi tiết tướng tiêu chuẩn" mà mọi công ty game đều dùng chung. Mỗi game MOBA (Liên Quân, DOTA 2, LoL) phải tự thiết kế bộ kỹ năng, bản đồ và hệ thống cân bằng riêng biệt hoàn toàn từ đầu.
+
+**3. Phức tạp, khó hiểu và vô hình**
+- **Lý thuyết:** Phần mềm không có hình dạng vật lý, không thể cầm nắm hay nhìn thấy trực tiếp được. Sự phức tạp bên trong (hàng triệu dòng code, hàng nghìn module phụ thuộc lẫn nhau) khiến không một cá nhân nào có thể hiểu toàn bộ hệ thống. Điều này gây khó khăn rất lớn cho việc giao tiếp giữa khách hàng và nhà phát triển.
+- **Ví dụ (Game MOBA):** Nhà đầu tư không thể "nhìn" vào hệ thống matchmaking để biết nó hoạt động đúng hay sai — họ chỉ thấy kết quả (ghép trận nhanh hay chậm). Bên trong, hệ thống matchmaking có hàng chục thuật toán phức tạp mà ngay cả Dev cũng phải mất nhiều tuần để hiểu hết.
+
+**4. Luôn luôn thay đổi (Thay đổi là bản chất của PM)**
+- [Ở dưới]
+
+**5. Được phát triển theo nhóm**
+- **Lý thuyết:** Phần mềm hiện đại quá phức tạp để một người tự làm. Việc phát triển đòi hỏi nhiều kỹ năng khác nhau (phân tích, thiết kế, lập trình, kiểm thử, quản lý dự án) và có nhu cầu bàn giao nhanh, nên bắt buộc phải làm việc theo nhóm.
+- **Ví dụ (Game MOBA):** Để phát triển game cần nhiều vai trò: Game Designer (thiết kế luật chơi), Programmer (viết code), Artist (vẽ đồ họa, tướng), Tester (kiểm thử), DevOps (vận hành server). Một mình không thể đảm nhận hết được, và nếu không phân công rõ ràng theo nhóm thì không thể bàn giao game kịp ngày ra mắt.
 
 ---
 
@@ -70,12 +81,35 @@ Kỹ nghệ phần mềm là một công nghệ phân tầng (layered technology
 
 ---
 
-## 5. Khó khăn và Thách thức trong Phát triển Phần mềm
+## 5. Tiến hóa Phần mềm và Thách thức
 
-**1. Vấn đề về Yêu cầu và Sự thay đổi**
-- **Lý thuyết:** Khách hàng thường "mù mờ" về chính sản phẩm họ muốn, dẫn đến yêu cầu liên tục thay đổi. Việc mô tả yêu cầu không đúng chuẩn sẽ sinh ra lỗi khi bàn giao.
-- **Ví dụ (Game MOBA):** Nhà đầu tư lúc đầu yêu cầu làm game sinh tồn bắn súng, nhưng sau 6 tháng lại đổi ý muốn kết hợp cả yếu tố MOBA phá nhà. Sự thay đổi đột ngột này khiến team Dev phải đập đi làm lại phần lớn logic game.
+**1. Phần mềm bị thay đổi khi nào và như thế nào?**
+- **Lý thuyết:** Thay đổi là bản chất của phần mềm. Thay đổi xảy ra cả trong **quá trình phát triển** (development) lẫn trong **quá trình sử dụng/bảo trì** (maintenance). Cụ thể, phần mềm bị thay đổi khi:
+  - Một yêu cầu cũ bị sửa hoặc loại bỏ.
+  - Một yêu cầu mới phát sinh.
+  - Lỗi phát sinh (bug).
+  - Môi trường phần mềm thay đổi (hệ điều hành, các hệ thống tương tác).
+  - Môi trường phần cứng thay đổi.
+- **Ví dụ (Game MOBA):** 
+  - *Yêu cầu cũ bị sửa:* Cơ chế "mua đồ chỉ ở Tế đàn" bị sửa thành "mua đồ ở bất kỳ đâu" (trong giai đoạn phát triển, do Game Designer đổi ý).
+  - *Yêu cầu mới:* Sau 1 năm vận hành, phát sinh yêu cầu thêm chế độ chơi mới "Đấu trường Aram" (trong giai đoạn bảo trì).
+  - *Lỗi phát sinh:* Bug tướng X dùng chiêu cuối xuyên tường.
+  - *Môi trường thay đổi:* Apple ra iOS 18, game phải cập nhật SDK mới để không bị crash.
 
-**2. Thách thức về Chi phí bảo trì**
-- **Lý thuyết:** Công việc bảo trì (sửa lỗi, nâng cấp sau khi đã phát hành) thường kéo dài và tiêu tốn chi phí gấp nhiều lần so với chi phí phát triển ban đầu (phát triển chỉ là phần nổi của tảng băng chìm).
-- **Ví dụ (Game MOBA):** Việc code ra bản game đầu tiên tốn 10 tỷ VNĐ. Nhưng việc vận hành, cân bằng tướng hàng tháng, chống hack và ra mắt sự kiện trong 10 năm tiếp theo tiêu tốn tới 100 tỷ VNĐ.
+**2. Nguyên nhân sâu xa của sự thay đổi**
+- **Lý thuyết:** Có 5 nguyên nhân chính khiến phần mềm phải thay đổi:
+  - *Quá trình thu thập, phân tích và đặc tả yêu cầu có vấn đề:* Sức ép thời gian, làm ẩu, khách hàng không biết hợp tác hoặc không diễn đạt rõ yêu cầu.
+  - *Đảm bảo chất lượng có vấn đề:* Kiểm thử không đủ kỹ, bỏ sót lỗi.
+  - *Nhu cầu con người ngày càng cao và phức tạp:* Người dùng luôn đòi hỏi thêm tính năng mới.
+  - *Nghiệp vụ của tổ chức thay đổi/tái cấu trúc:* Doanh nghiệp đổi chiến lược kinh doanh, sáp nhập, mở rộng.
+  - *Môi trường phần mềm thường xuyên thay đổi:* Hệ điều hành nâng cấp, thư viện bên thứ 3 ngừng hỗ trợ, phần cứng đổi thế hệ.
+- **Ví dụ (Game MOBA):** Nguyên nhân game phải update liên tục: Team QA không đủ thời gian test kỹ trước ngày ra mắt nên còn nhiều bug (chất lượng có vấn đề). Cộng đồng game thủ liên tục đòi thêm chế độ chơi mới, tướng mới (nhu cầu ngày càng cao). Nhà phát hành đổi chiến lược sang thị trường eSports, yêu cầu thêm hệ thống giải đấu (nghiệp vụ thay đổi). Google Play yêu cầu tất cả app phải target Android 14 (môi trường thay đổi).
+
+**3. Thách thức đặt ra từ tiến hóa phần mềm**
+- **Lý thuyết:** Sự thay đổi liên tục tạo ra 3 thách thức lớn:
+  - *Tăng chi phí phát triển (rework):* Mỗi lần thay đổi yêu cầu giữa chừng, team phải làm lại (rework) những phần đã hoàn thành, tốn thêm thời gian và tiền bạc.
+  - *Tăng chi phí bảo trì:* Chi phí bảo trì (sửa lỗi, nâng cấp sau khi phát hành) thường **gấp nhiều lần** chi phí phát triển ban đầu. Phát triển chỉ là phần nổi của tảng băng chìm.
+  - *Phát sinh nhiều vấn đề lớn:* Về kỹ thuật (code cũ trở nên khó bảo trì — technical debt), về ứng dụng (tính năng mới xung đột với tính năng cũ).
+  
+  **Câu hỏi lớn chưa có lời đáp thỏa đáng:** Làm thế nào để phát triển các sản phẩm phần mềm có khả năng bảo trì với chi phí thấp và thời gian ngắn?
+- **Ví dụ (Game MOBA):** Việc code ra bản game đầu tiên tốn 10 tỷ VNĐ. Nhưng việc vận hành, cân bằng tướng hàng tháng, chống hack và ra mắt sự kiện trong 10 năm tiếp theo tiêu tốn tới 100 tỷ VNĐ (chi phí bảo trì >> chi phí phát triển). Mỗi bản cập nhật lớn, team phải rework lại phần code matchmaking vì yêu cầu thay đổi liên tục, dẫn đến code ngày càng rối rắm (technical debt tích tụ).

@@ -82,13 +82,21 @@ Yêu cầu phi chức năng được phân cấp chi tiết thành 3 nhóm lớn
 - **Tính nhất quán (Consistency):**
   - **Lý thuyết:** Các yêu cầu không được mâu thuẫn hay xung đột lẫn nhau. Trong thực tế, đối với các hệ thống lớn, rất khó để đạt được cả tính đầy đủ và tính nhất quán cùng một lúc trong tài liệu yêu cầu.
   - **Ví dụ (Game MOBA):** 
-    - *Không nhất quán (Mâu thuẫn):* Yêu cầu 1 ghi "Game phải chạy mượt mà ở mức ổn định 60 FPS trên mọi điện thoại đời cũ RAM 2GB". Yêu cầu 2 lại ghi "Game phải bật hiệu ứng bóng đổ thời gian thực và ánh sáng động độ phân giải cao cho tất cả các tướng". Máy RAM 2GB không thể gánh nổi đồ họa phức tạp này ở mức 60 FPS.
+    - *Không nhất quán (Mâu thuẫn):* 
+Yêu cầu A: "Hệ thống phải tự động khóa tài khoản người dùng sau 3 lần nhập sai mật khẩu để bảo mật."
+
+Yêu cầu B: "Để đảm bảo trải nghiệm người dùng không bị gián đoạn, hệ thống không bao giờ được phép chặn quyền truy cập của người dùng vào tài khoản của họ."
+
+Yêu cầu A: "Hệ thống phải hiển thị danh sách khách hàng đã thanh toán trong tháng."
+
+Yêu cầu B: "Báo cáo cuối tháng phải liệt kê tất cả người dùng có phát sinh giao dịch."
+
 - **Tính đo được / Kiểm chứng được (Measurability / Verifiability):**
   - **Lý thuyết:** Các yêu cầu phi chức năng cần phải được lượng hóa bằng các chỉ số hoặc tiêu chí cụ thể để có thể đo lường và kiểm tra xem hệ thống có thực sự thỏa mãn yêu cầu đó hay không khi nghiệm thu. Tránh dùng các từ mơ hồ như "nhanh", "dễ dùng", "mượt".
   - **Ví dụ (Game MOBA):**
     - *Không đo được:* "Game phải tải màn hình trận đấu thật nhanh."
     - *Đo được:* "Thời gian tải bản đồ trận đấu (Loading screen) từ lúc kết thúc phòng chờ chọn tướng đến khi người chơi vào trận không được vượt quá 15 giây đối với thiết bị có kết nối mạng từ 10 Mbps trở lên."
-
+- **Tính hiện thực**: Các yêu cầu cần phải thực hiện được với ngân sách hiện có
 ---
 
 ## 2. Tài liệu yêu cầu và Đặc tả
